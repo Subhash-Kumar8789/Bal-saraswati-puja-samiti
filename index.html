@@ -290,6 +290,20 @@ select{
     margin-bottom:15px;
   }
 }
+  /* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .guest-container {
+    position: static;        /* content के साथ flow करेगा */
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .guest-container img {
+    max-height: 260px;
+    object-fit: cover;
+  }
+}
+
 
 
 
@@ -492,3 +506,4 @@ function openLightbox(src){
 
 </body>
 </html>
+
