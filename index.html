@@ -117,8 +117,32 @@ body{
 .summary{
   display:flex;
   gap:10px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;      /* mobile me wrap ke liye */
 }
+
+.summary .box {
+  flex: 1;              /* sab boxes equal width le */
+  min-width: 120px;     /* minimum width for small screens */
+  text-align: center;
+  color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  font-weight: bold;
+  min-height: 80px;     /* uniform height for all boxes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+}
+
+@media (max-width: 600px){
+  .summary .box {
+    width: 100%;        /* mobile me full width */
+    min-height: 70px;   /* mobile me thoda chhota */
+    padding: 10px;
+  }
+}
+
 .box{
   flex:1;
   min-width:120px;
@@ -291,20 +315,19 @@ select{
   }
 }
 /* ===== MOBILE FIX ===== */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .guest-container {
-    position: static;        /* content के साथ flow करेगा */
-    width: 100%;
-    margin-bottom: 10px;
+    position: relative;     /* content ke flow me aa jaye */
+    top: auto;
+    right: auto;
+    width: 100%;            /* mobile me full width */
+    min-height: 180px;      /* mobile me thoda chhota */
+    margin-bottom: 15px;
   }
-
   .guest-container img {
-    max-height: 260px;
-    object-fit: cover;
+    height: 120px;          /* mobile ke liye image height chhoti */
   }
 }
-
-
 
 </style>
 </head>
@@ -537,3 +560,4 @@ function openLightbox(src){
 
 </body>
 </html>
+
